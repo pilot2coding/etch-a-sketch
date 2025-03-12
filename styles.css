@@ -1,0 +1,9 @@
+#canvas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    margin: 0 auto;
+}
+.grid-square{
+    box-sizing: border-box;
+}
