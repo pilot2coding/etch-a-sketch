@@ -30,9 +30,21 @@ function createCanvas(slide){
 function mouseOverColoring(){
     let squares = document.querySelectorAll(".grid-square");
     
+    
     squares.forEach(square => {
         square.addEventListener("mouseover", function(event){
-            this.style.backgroundColor = "";
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            let currentOpacity = parseFloat(this.style.opacity) || 0.1;
+
+            if(currentOpacity < 1){
+                currentOpacity += 0.1;
+            }
+
+            this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            this.style.opacity = currentOpacity.toString();
+
         });
     });
 }
